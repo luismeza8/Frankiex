@@ -41,6 +41,9 @@ public class Main {
         
         //Espero que los hayan puesto
         
+        // holaaaa
+        // jajajaja
+        // XDDDDD
         receta.setDificultad(Dificultad.LEGENDARIO);
         
         
