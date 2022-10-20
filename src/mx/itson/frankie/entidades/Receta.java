@@ -4,6 +4,7 @@
  */
 package mx.itson.frankie.entidades;
 
+import com.google.gson.Gson;
 import java.util.List;
 import mx.itson.frankie.enumeradores.Dificultad;
 
@@ -20,6 +21,18 @@ public class Receta {
     private List<Ingrediente> ingredientes;
     private List<Paso> pasos;
     private Dificultad dificultad;
+
+    public Receta deserializar(String json){
+        Receta receta = new Receta();
+        
+        try {
+            receta = new Gson().fromJson(json, Receta.class);
+        } catch (Exception e) {
+            System.err.println("Ocurrio un error: " + e.getMessage());
+        }
+        
+        return receta;
+    }
     
     /**
      * @return the nombre
@@ -118,6 +131,5 @@ public class Receta {
     public void setDificultad(Dificultad dificultad) {
         this.dificultad = dificultad;
     }
-    
 
 }
